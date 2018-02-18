@@ -3,4 +3,9 @@ module.exports = function(app) {
 
   app.route('/random')
     .get(grubby.getRandomGrubby);
+
+  app.route('/grubby/:id')
+    .get(grubby.getSpecificGrubby);
+
+  //app.route('/random-image')
 }
