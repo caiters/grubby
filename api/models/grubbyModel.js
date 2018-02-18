@@ -1,29 +1,6 @@
-const grubbys = [
-  '/images/autumn.jpg',
-  '/images/bed-sit.jpg',
-  '/images/big-grin.jpg',
-  '/images/bookcase.jpg',
-  '/images/car.jpg',
-  '/images/cement.jpg',
-  '/images/chair-sleep.jpg',
-  '/images/couch.jpg',
-  '/images/dapper.jpg',
-  '/images/grubby-and-tcl-bed.jpg',
-  '/images/grubby-tcl-haircuts.jpg',
-  '/images/grubby-tcl-happy.jpg',
-  '/images/grubby-tcl-upsidedown.jpg',
-  '/images/huh.jpg',
-  '/images/livingroom.jpg',
-  '/images/mud.jpg',
-  '/images/naptime.jpg',
-  '/images/sad.jpg',
-  '/images/short.jpg',
-  '/images/sitting.jpg',
-  '/images/skeptical.jpg',
-  '/images/smile.jpg',
-  '/images/sniff.jpg',
-  '/images/underbite.jpg',
-  '/images/wag.jpg',
-];
+const fs = require('fs');
+
+// gets array of all grubby images
+const grubbys = fs.readdirSync('./images/');
 
 module.exports = exports = grubbys;
