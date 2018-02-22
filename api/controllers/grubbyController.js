@@ -10,10 +10,13 @@ function sendGrubby(file, res) {
 
 exports.getSpecificGrubby = function(req, res, next) {
   const id = req.params.id;
+  const dimensions = req.params.dimensions.split('x');
+  const width = Number(dimensions[0]);
+  const height = Number(dimensions[1]);
   if(grubbys[id]) {
     return Jimp.read(path.join(__dirname, '..', '..', 'images', grubbys[id]))
       .then( img => img.clone())
-      .then( img => img.resize(700,500))
+      .then( img => img.cover(width,height))
       .then( img => img.getBuffer(Jimp.MIME_JPEG, function(err, buffer){
         res.set('Content-Type', 'image/jpeg');
         res.send(buffer);
